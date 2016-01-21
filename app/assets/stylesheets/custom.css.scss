@@ -108,5 +108,16 @@ input {
   margin-bottom: 20px;
 }
 
+span.picture{
+  margin-top: 10px;
+  input{
+    border: 0;
+  }
+}
+
+.show_pic{
+  margin: 10px 10px 10px 10px;
+}
+
 @import "bootstrap-sprockets";
 @import "bootstrap";

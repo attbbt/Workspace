@@ -37,6 +37,10 @@ body{
   text-align: center;
 }
 
+.msg-size{
+  font-size: 20px;
+}
+
 h1, h2, h3, h4{
   line-height: 1;
 }
@@ -64,7 +68,6 @@ h2{
 .left{
   text-align: left;
   letter-spacing: .5px;
-  padding: 10px;
 }
 
 #copy-right{
@@ -72,5 +75,38 @@ h2{
   color: white;
   padding: 10px;
 }
+
+.gravatar{
+  border-radius: 10px;
+}
+
+.chef_info{
+  margin-top: 10px;
+
+}
+
+.well{
+  background-color: #EDEDED;
+}
+
+input, textarea, select, .uneditable-input{
+  border: 1px solid #d2d2d2;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+input {
+  height: auto !important;
+}
+
+#button{
+  width: 30%;
+}
+
+#form-gap{
+  margin-bottom: 20px;
+}
+
 @import "bootstrap-sprockets";
 @import "bootstrap";

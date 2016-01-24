@@ -1,5 +1,7 @@
 <%= render 'shared/page_title', title: "Recipes" %>
-<hr/>
+
+<%= will_paginate %>
+
 <% @recipes.each do |recipe| %>
   <div class="row">
     <div class="col-md-2">
@@ -12,9 +14,18 @@
     <div class="col-lg-6 well left">
       <h4><%= link_to recipe.name, recipe_path(recipe.id) %></h4>
       <p><%= recipe.summary %></p>
+      <div class="pull-right">
+        <%= link_to like_recipe_path(recipe, like:true), method: :post do %>
+          <i class="glyphicon glyphicon-thumbs-up"></i>&nbsp; <%= recipe.thumbs_up_total %>
+        <% end %> &nbsp;&nbsp;&nbsp;&nbsp;
+        <%= link_to like_recipe_path(recipe, like:false), method: :post do %>
+          <i class="glyphicon glyphicon-thumbs-down"></i>&nbsp; <%= recipe.thumbs_down_total %>
+        <% end %>
+      </div>
       <p>
         <span class="quite">
-          <small> <%= time_ago_in_words(recipe.created_at) %> ago</small>
+          <small> created: <%= time_ago_in_words(recipe.created_at) %> ago</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <small> updated: <%= time_ago_in_words(recipe.updated_at) %> ago</small>
         </span>
       </p>
     </div>
@@ -24,3 +35,5 @@
   </div>
   <hr/>
 <% end %>
+
+<%= will_paginate %>

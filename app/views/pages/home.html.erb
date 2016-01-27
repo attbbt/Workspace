@@ -1,7 +1,7 @@
 <div class="center jumbotron">
   <h1>Welcome to My Recipes App</h1>
   <h2>This application is to teach me Ruby on Rails like a pro</h2>
-  <%= link_to "Sign up now!", "", class: "btn btn-lg btn-success btn-lg" %>
+  <%= link_to "Sign up now!", register_path, class: "btn btn-lg btn-success btn-lg" %>
 </div>
 
 <div class="row">
@@ -16,12 +16,12 @@
   </div>
   <div class="col-lg-4">
     <h2 class="midrow">
-      View Recipes as Guest User
+      Sign in to your account
     </h2>
     <h3 class="left">
-      Browse and view recipes as a guest and Sign Up later
+      Add or update your recipes and like or dislike recipes
     </h3>
-    <p class="center btn btn-warning btn-small"><%= link_to "Browse Recipe Listings", recipes_path %></p>
+    <p class="center btn btn-warning btn-small"><%= link_to "Login to your account", login_path %></p>
   </div>
   <div class="col-lg-4">
     <h2 class="midrow">

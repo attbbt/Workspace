@@ -13,6 +13,7 @@ gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3', '>= 4.3.6'
 gem 'will_paginate', '3.0.5'
 gem 'bootstrap-will_paginate', '0.0.10'
+gem 'bcrypt', '3.1.7'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do

@@ -14,7 +14,7 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
-    @recipe.chef = Chef.find(1)
+    @recipe.chef = current_user
 
     if @recipe.save
       flash[:success] = "Recipe was created successfully!"
@@ -47,7 +47,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     like = Like.create(like: params[:like], chef: Chef.first, recipe: @recipe)
     if like.valid?
-      flash[:success] = "Your Selection was successfully"
+      flash[:success] = "Your Selection was successful"
       redirect_to :back
     else
       flash[:error]  = "You can like/dislike a recipe once!"

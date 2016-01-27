@@ -18,6 +18,8 @@ $jumbotron-bg: #66FFCC;
   font-weight: bold;
 }
 
+body { padding-bottom: 70px; }
+
 #logo:hover {
   color: white;
   text-decoration: none;
@@ -86,7 +88,7 @@ h2{
 }
 
 .well{
-  background-color: #EDEDED;
+  background-color: red;
 }
 
 input, textarea, select, .uneditable-input{
@@ -101,7 +103,7 @@ input {
 }
 
 #button{
-  width: 30%;
+  width: 49%;
 }
 
 #form-gap{

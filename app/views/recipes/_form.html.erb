@@ -16,6 +16,18 @@
         <%= f.text_area :description, rows: 8 %>
       </div>
       <div id="form-gap">
+        <strong>Styles:</strong>
+        <%= f.collection_check_boxes :style_ids, Style.all, :id, :name do |cb| %>
+          <% cb.label(class: 'checkbox-inline') {cb.check_box(class: 'checkbox') + cb.text} %>
+        <% end %>
+      </div>
+      <div id="form-gap">
+        <strong>Ingredients:</strong>
+        <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name do |cbi| %>
+          <% cbi.label(class: 'checkbox-inline') {cbi.check_box(class: 'checkbox') + cbi.text} %>
+        <% end %>
+      </div>
+      <div id="form-gap">
         <span class="picture">
           <%= f.label :'Upload an image' %>
           <%= f.file_field :picture, accept: 'image/jpeg, image/gif, image/png, image/jpg' %>
@@ -36,4 +48,4 @@ $('#recipe_picture').bind('change', function(){
     alert("Maximum file size allowed is 5MB. Please choose a smaller file")
   }
 });
-</script
+</script>

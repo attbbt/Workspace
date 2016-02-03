@@ -16,6 +16,7 @@ $jumbotron-bg: #66FFCC;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
+  font-family: cursive;
 }
 
 body { padding-bottom: 70px; }
@@ -31,6 +32,12 @@ body{
 
 .nav-item{
   margin-left: 25px;
+  float: left;
+  margin-top: 20px;
+}
+
+.nav-ul-item{
+  padding-left: 25px;
   float: left;
   margin-top: 20px;
 }

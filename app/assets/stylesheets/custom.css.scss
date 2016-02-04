@@ -19,8 +19,6 @@ $jumbotron-bg: #66FFCC;
   font-family: cursive;
 }
 
-body { padding-bottom: 70px; }
-
 #logo:hover {
   color: white;
   text-decoration: none;
@@ -28,6 +26,7 @@ body { padding-bottom: 70px; }
 
 body{
   padding-top: 80px;
+  padding-bottom: 70px;
 }
 
 .nav-item{
@@ -44,6 +43,7 @@ body{
 
 .center{
   text-align: center;
+  height: auto;
 }
 
 .msg-size{
@@ -68,6 +68,7 @@ h2{
   font-weight: normal;
   color: #777;
 }
+
 .midrow{
   text-align: left;
   font-size: 25px;

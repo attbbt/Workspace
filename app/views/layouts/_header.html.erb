@@ -2,7 +2,7 @@
 <div class="container-fluid">
 
   <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+    <button style="margin-top:10px;height:50px;width:50px" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
@@ -14,7 +14,7 @@
       <li><%= link_to 'Home', root_path, id: 'nav-item' %></li>
       <li class="dropdown">
         <%= link_to '#', class: "dropdown-toggle", id: 'nav-item', "data-toggle" => "dropdown" do %>
-            Styles <b class="caret"></b>
+            Styles <span class="caret"></span>
         <% end %>
         <ul class="dropdown-menu">
           <% Style.all.each do |style| %>
@@ -28,7 +28,7 @@
       </li>
       <li class="dropdown">
         <%= link_to '#', class: "dropdown-toggle", id: 'nav-item', "data-toggle" => "dropdown" do %>
-            Ingredients <b class="caret"></b>
+            Ingredients <span class="caret"></span>
         <% end %>
         <ul class="dropdown-menu">
           <% Ingredient.all.each do |ing| %>
@@ -48,7 +48,7 @@
     <ul class="nav navbar-nav navbar-right">
       <li class="dropdown">
         <%= link_to '#', class: " dropdown-toggle", id: 'nav-item', "data-toggle" => "dropdown" do %>
-          <%= current_user.name %> <b class="caret"></b>
+          <%= current_user.name %> <span class="caret"></span>
         <% end %>
         <ul class="dropdown-menu">
           <li><%= link_to 'View Profile', chef_path(current_user) %></li>

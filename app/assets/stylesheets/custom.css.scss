@@ -29,7 +29,7 @@ body{
   padding-bottom: 30px;
 }
 
-@media screen and (min-width: 0px) and (max-width: 922px) {
+@media screen and (min-width: 0px) and (max-width: 1000px) {
   body {
     padding-top: 110px;
     padding-bottom: 30px;
@@ -37,8 +37,11 @@ body{
   .navbar-default .navbar-nav > li > a {
     margin-top: 10px;
   }
+    .recipe_pic{
+    display: none;
+  }
 }
-@media screen and (min-width: 923px) {
+@media screen and (min-width: 1001px) {
   body {
     padding-top: 80px;
     padding-bottom: 30px;
@@ -60,6 +63,7 @@ body{
 
 #nav-item:hover{
   background-color: rgb(92, 184, 92);
+  border-radius: 10px
 }
 
 .navbar-default .navbar-nav .open .dropdown-menu {
@@ -110,6 +114,9 @@ h2{
   letter-spacing: .5px;
 }
 
+.r-index{
+  float: left;
+}
 #copy-right{
   font-family: cursive;
   color: white;
@@ -122,7 +129,18 @@ h2{
 
 .chef_info{
   margin-top: 10px;
+  float: left;
+  text-align: center;
+  max-width: 140px;
+}
 
+.chef_pic{
+  margin-left: 20px;
+}
+
+#recipe_info{
+  text-align: left;
+  float: left;
 }
 
 .well{

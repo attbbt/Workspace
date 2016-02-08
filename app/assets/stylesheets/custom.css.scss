@@ -26,7 +26,7 @@ $jumbotron-bg: #66FFCC;
 
 body{
   padding-top: 80px;
-  padding-bottom: 30px;
+  padding-bottom: 80px;
 }
 
 @media screen and (min-width: 0px) and (max-width: 1000px) {
@@ -181,5 +181,13 @@ span.picture{
   margin: 10px 10px 10px 10px;
 }
 
+.social-share-button-facebook {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url("/social/facebook.png") no-repeat;
+}
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "social-share-button";

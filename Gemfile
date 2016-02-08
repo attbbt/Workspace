@@ -16,6 +16,7 @@ gem 'bootstrap-will_paginate', '0.0.10'
 gem 'bcrypt', '3.1.7'
 gem 'fog', '1.36.0'
 gem 'net-ssh'
+gem 'social-share-button'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do

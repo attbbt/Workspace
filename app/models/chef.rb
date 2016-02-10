@@ -4,6 +4,7 @@ class Chef < ActiveRecord::Base
 
   has_many :recipes
   has_many :likes
+  has_many :comments
 
   VALID_EMAIL_REGEX = /\b[A-Z0-9._%a-z\-]+@(?:[A-Z0-9a-z\-]+\.)+[A-Za-z]{2,4}\z/
   validates :name, presence: true, length: { minimum: 3, maximum: 25 }

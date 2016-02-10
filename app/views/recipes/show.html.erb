@@ -12,12 +12,10 @@
     </p>
   </div>
   <div class="col-md-8 left">
-    <div class='row'>
-      <h3><%= @recipe.summary %>
-      <% if logged_in? and @recipe.chef == current_user %>
-        <%= link_to "Edit Recipe", edit_recipe_path(@recipe), class: 'btn btn-success pull-right' %></h3>
-      <% end %>
-    </div>
+    <h3><%= @recipe.summary %>
+    <% if logged_in? and @recipe.chef == current_user %>
+      <%= link_to "Edit Recipe", edit_recipe_path(@recipe), class: 'btn btn-success pull-right' %></h3>
+    <% end %>
     <hr/>
     <div class="show_pic">
       <%= image_tag(@recipe.picture.url, size:"350x200", class: 'gravatar') if @recipe.picture? %>
@@ -41,6 +39,27 @@
       </div></br>
       <div class="pull-right" id='social-share'><%= social_share_button_tag(@recipe.name, :popup => "true") %></div>
     </div>
-    <%= link_to 'Return to Recipes Listing', recipes_path, class: 'btn btn-warning btn-small pull-left' %>
+    <%= link_to "Write a Review", new_recipe_comment_path(@recipe),class: 'btn btn-warning btn-small' %>
+    <%= link_to 'Return to Recipes Listing', recipes_path, class: 'btn btn-warning btn-small pull-right' %>
+    <hr/>
+    <div class="well">
+      <% if @recipe.comments.any? %>
+        <% @recipe.comments.each do |comment| %>
+          <div class="well well-sm">
+            <span id='comment-img'>
+              <% if @recipe.chef.picture? %>
+                <%= link_to image_tag(@recipe.chef.picture.url, size:"50x50", class: 'img-circle'), chef_path(@recipe.chef) %>
+              <% else %>
+                <%= link_to image_tag('missing.png', size:"50x50", class: 'img-rounded'), chef_path(@recipe.chef) %>
+              <% end %>
+            </span>
+            <span id="comment-name"><h4><strong><%= comment.chef.name %></strong></h4></span>
+            <p><%= comment.content %></p>
+          </div>
+        <% end %>
+      <% else %>
+        <h3>No reviews just yet, would you like to add the first!</h3>
+      <% end %>
+    </div>
   </div>
 </div></br></br></br></br>

@@ -16,7 +16,6 @@ class CommentsController < ApplicationController
     @comment.recipe_id = @recipe.id
 
     if @comment.save
-      debugger
       flash[:success] = "Comment was successfully posted!"
       redirect_to recipe_path(@recipe)
     else

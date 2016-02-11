@@ -7,3 +7,7 @@ $(window).resize(adjust_body_offset);
 $(document).ready(adjust_body_offset);
 
 $(window).load(adjust_body_offset);
+
+$(document).on("click","#comment-link",function(){
+  $("#new-comment").show();
+});

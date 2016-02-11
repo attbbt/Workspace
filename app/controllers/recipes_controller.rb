@@ -10,6 +10,13 @@ class RecipesController < ApplicationController
   end
 
   def show
+     @comments = Comment.where(recipe_id: @recipe.id).order("created_at DESC")
+
+    if @comments.blank?
+      @avg_rating = 0
+    else
+      @avg_rating = @comments.average(:rating).round(2)
+    end
   end
 
   def new

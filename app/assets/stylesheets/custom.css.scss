@@ -29,7 +29,12 @@ body{
   padding-bottom: 80px;
 }
 
-@media screen and (min-width: 0px) and (max-width: 1000px) {
+@media screen and (min-width: 0px) and (max-width: 799px) {
+  .recipe_pic{
+    display: none;
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 1000px) {
   body {
     padding-top: 110px;
     padding-bottom: 80px;
@@ -37,8 +42,9 @@ body{
   .navbar-default .navbar-nav > li > a {
     margin-top: 10px;
   }
-    .recipe_pic{
-    display: none;
+  .recipe_pic{
+    height: 150px;
+    width: 150px;
   }
 }
 @media screen and (min-width: 1001px) {
@@ -181,20 +187,18 @@ span.picture{
   margin: 10px 10px 10px 10px;
 }
 
-.social-share-button-facebook {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background: url("/social/facebook.png") no-repeat;
-}
 
 #comment-name{
-  margin-top: -10px;
   display: inline-block;
+  padding-top: -20px;
 }
 
 #comment-img{
+  vertical-align: none;
+}
 
+.star-rating {
+  padding-bottom: 8px;
 }
 
 @import "bootstrap-sprockets";

@@ -66,3 +66,13 @@
 <% end %>
 
 <%= will_paginate %>
+
+<script>
+  $('.star-rating').raty({
+      path: '/assets/',
+      readOnly: true,
+      score: function() {
+            return $(this).attr('data-score');
+    }
+  });
+</script>

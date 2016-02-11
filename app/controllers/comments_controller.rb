@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
   before_action :set_recipe
-    before_action :require_user_comment, only: [:create, :update, :destrou]
+  before_action :require_user
 
   def new
     @comment = Comment.new
@@ -16,14 +16,17 @@ class CommentsController < ApplicationController
     @comment.recipe_id = @recipe.id
 
     if @comment.save
-      redirect_to @recipe
+      debugger
+      flash[:success] = "Comment was successfully posted!"
+      redirect_to recipe_path(@recipe)
     else
-      render 'new'
+      render :new
     end
   end
 
   def update
     @comment.update(comment_params)
+    redirect_to recipe_path(@recipe)
   end
 
   def destroy
@@ -32,22 +35,16 @@ class CommentsController < ApplicationController
   end
 
   private
-    def set_comment
-      @comment = Comment.find(params[:id])
-    end
+  def set_comment
+    @comment = Comment.find(params[:id])
+  end
 
-    def set_recipe
-      @recipe = Recipe.find(params[:recipe_id])
-    end
+  def set_recipe
+    @recipe = Recipe.find(params[:recipe_id])
+  end
 
-    def comment_params
-      params.require(:comment).permit(:content)
-    end
+  def comment_params
+    params.require(:comment).permit(:content, :rating)
+  end
 
-    def require_user_comment
-      if !logged_in?
-        flash[:danger] = "You must be logged in to perform that action"
-       redirect_to :back
-       end
-    end
 end

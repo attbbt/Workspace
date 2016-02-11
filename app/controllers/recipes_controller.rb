@@ -15,7 +15,7 @@ class RecipesController < ApplicationController
     if @comments.blank?
       @avg_rating = 0
     else
-      @avg_rating = @comments.average(:rating).round(2)
+      @avg_rating = @comments.average(:rating)
     end
   end
 

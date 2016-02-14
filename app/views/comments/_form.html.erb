@@ -8,7 +8,7 @@
       </div>
       <div id="form-gap">
         <%= f.label :content %>
-        <%= f.text_area :content %>
+        <%= f.text_area :content, autofocus: true %>
       </div>
 
       <%= f.submit(@comment.new_record? ? "Post comment" : "Update comment", class: 'btn btn-success', id: 'button') %>

@@ -5,7 +5,7 @@
     <%= form_for @ingredient do |f| %>
       <div id="form-gap">
         <%= f.label :name %>
-        <%= f.text_field :name %>
+        <%= f.text_field :name, autofocus: true %>
       </div>
 
       <%= f.submit "Create ingredient", class: 'btn btn-success', id: 'button' %>

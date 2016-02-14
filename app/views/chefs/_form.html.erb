@@ -1,11 +1,11 @@
 <%= render 'shared/errors', obj: @chef %>
 
 <div class="row">
-  <div class="well col-md-8 col-md-offset-2 left">
+  <div class="well col-md-4 col-md-offset-4 left">
     <%= form_for @chef, html: {multipart: true } do |f| %>
       <div id="form-gap">
         <%= f.label :Name %>
-        <%= f.text_field :name %>
+        <%= f.text_field :name, autofocus: true %>
       </div>
       <div id="form-gap">
         <%= f.label :Email%>

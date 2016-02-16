@@ -3,12 +3,7 @@ class CommentsController < ApplicationController
   before_action :set_recipe
   before_action :require_user
 
-  def new
-    @comment = Comment.new
-  end
 
-  def edit
-  end
 
   def create
     @comment = Comment.new(comment_params)
@@ -25,7 +20,6 @@ class CommentsController < ApplicationController
 
   def update
     @comment.update(comment_params)
-    redirect_to recipe_path(@recipe)
   end
 
   def destroy
